@@ -115,7 +115,6 @@ npm expo start --android
 
 
 ## Bugs to be fixed
-- When exiting the chatscreen (going back to dashboard or another page) and coming back you dont see the messages sent from user as readed as they should.
 - Android system ui bar needs to be hidden when joining chat screen so it wont be overlaying on chat input. (This is diferent based on android settings if the bar is automaticaly hiding or staying permamently on bottom page).
 - Store emoji reactions on messages even after user closes the chatscreen and reloads the app or joins the screen again.
 - Gale sometimes not stoping typing if u start too late to write the message.

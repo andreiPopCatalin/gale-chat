@@ -142,7 +142,7 @@ class ChatAPI {
   // Get initial messages - either from storage or preset welcome messages
   async getInitialMessages(): Promise<{ messages: ChatMessage[], hasMore: boolean, userHasInteracted: boolean }> {
     try {
-
+      //Debug only uncomment this line if u want to remove the messages start the app, go to screen then comment it again here
       //await AsyncStorage.removeItem(this.storageKey);
       const storedMessages = await AsyncStorage.getItem(this.storageKey);
       

@@ -2,6 +2,8 @@
 
 ## Overview
 React Native chat application with an AI assistant named Gale. Features realistic chat behaviors, animations, sound effects, and message persistence.
+I used some images by screenshoting them and removed bg to use them.
+The animations videos not working anymore in the requirements section pdf. But i downlaoded the app and view them there.
 
 ## Features
 - **Core Chat**:
@@ -86,6 +88,7 @@ npm expo start --android
 
 ## Roadmap
 **Immediate Improvements**
+- Implement loadMoreMessages ( so we wont load all messages in the chat and load them 40 by 40 or some rule )
 - Implement proper scroll management
 - Add pixel-perfect font scaling
 - iOS compatibility testing
@@ -111,10 +114,11 @@ npm expo start --android
 - Sound effects
 
 
-## Bugs
+## Bugs to be fixed
 - When exiting the chatscreen (going back to dashboard or another page) and coming back you dont see the messages sent from user as readed as they should.
 - Android system ui bar needs to be hidden when joining chat screen so it wont be overlaying on chat input. (This is diferent based on android settings if the bar is automaticaly hiding or staying permamently on bottom page).
-- Store emoji reactions on messages even after user closes the chatscreen and reloads the app or joins the screen again .
+- Store emoji reactions on messages even after user closes the chatscreen and reloads the app or joins the screen again.
+- Gale sometimes not stoping typing if u start too late to write the message.
 
 
 

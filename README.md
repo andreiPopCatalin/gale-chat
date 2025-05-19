@@ -4,6 +4,7 @@
 - React Native chat application with an AI assistant named Gale. Features realistic chat behaviors, animations, sound effects, and message persistence.
 - I used some images by screenshoting them and removed bg to use them.
 - The animations videos not working anymore in the requirements section pdf. But i downlaoded the app and view them there.
+- There are still few things that should be worked and perfected like code cleanup and proper component distribution, also small cleanup on design and stylesheets that i don't use.
 
 ## Features
 - **Pages**:

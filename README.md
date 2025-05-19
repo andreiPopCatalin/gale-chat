@@ -6,6 +6,10 @@
 - The animations videos not working anymore in the requirements section pdf. But i downlaoded the app and view them there.
 
 ## Features
+- **Pages**:
+  - Welcome screen
+  - Dashboard Screen
+  - Chat Screen
 - **Core Chat**:
   - Message bubbles with status indicators (sent/delivered/read)
   - Typing indicators

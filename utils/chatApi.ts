@@ -67,7 +67,7 @@ const GALE_RESPONSES: string[] = [
 ];
 
 // Utility to create message bubbles from text
-// In ChatAPI.ts, modify the createMessageBubbles function:
+
 export const createMessageBubbles = (text: string, from: 'user' | 'gale', date: string): ChatMessage[] => {
     const now = new Date();
     const time = now.toLocaleTimeString('en-US', {
@@ -150,11 +150,17 @@ class ChatAPI {
         const parsedMessages = JSON.parse(storedMessages) as ChatMessage[];
         const hasMore = parsedMessages.length > 40;
         
-        // Check if user has sent any messages
         const userHasInteracted = parsedMessages.some(msg => msg.from === 'user');
         
-        // Load only the most recent 40 messages initially
-        const initialMessages = userHasInteracted ? parsedMessages.slice(-40) : [];
+        // Load messages with proper status preservation
+        const initialMessages = userHasInteracted 
+          ? parsedMessages.slice(-40).map(msg => ({
+              ...msg,
+              status: msg.from === 'user' 
+                ? (msg.status === 'sending' ? 'seen' : msg.status || 'seen')
+                : undefined
+            }))
+          : [];
         
         return { 
           messages: initialMessages, 
@@ -163,7 +169,6 @@ class ChatAPI {
         };
       }
       
-      // First-time users get no messages (welcome will be shown)
       return { 
         messages: [], 
         hasMore: false, 

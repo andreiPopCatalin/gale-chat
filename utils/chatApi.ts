@@ -235,7 +235,7 @@ class ChatAPI {
     const userMessages = createMessageBubbles(text, 'user', new Date().toDateString());
     
     // Simulate response generation
-    await new Promise(resolve => setTimeout(resolve, 500));
+    await new Promise(resolve => setTimeout(resolve, 1000));
     
     // Get a random response
     const responseText = GALE_RESPONSES[Math.floor(Math.random() * GALE_RESPONSES.length)];

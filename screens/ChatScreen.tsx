@@ -13,13 +13,12 @@ import {
   Image,
   SafeAreaView,
   TouchableWithoutFeedback,
-  ActivityIndicator,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { LinearGradient } from 'expo-linear-gradient';
 import { playSound } from '../utils/soundPlayer';
 import * as Animatable from 'react-native-animatable';
-import { groupMessagesByDate, splitMessageIntoSentences } from '../utils/messageHelpers';
+import { groupMessagesByDate } from '../utils/messageHelpers';
 import addMessageReactionFeature from '../components/addMessageReactionFeature';
 import chatApi , { ChatMessage } from '../utils/chatApi';
 import StatusTransition from '../components/statusTransition';
@@ -39,7 +38,6 @@ const ChatScreen = () => {
   const [groupedMessages, setGroupedMessages] = useState([]);
   const [isNearBottom, setIsNearBottom] = useState(true);
   const [hasUserInteracted, setHasUserInteracted] = useState(false);
-  const [isLoadingMore, setIsLoadingMore] = useState(false);
   const [hasMoreMessages, setHasMoreMessages] = useState(true);
   const [shouldAbortResponse, setShouldAbortResponse] = useState(false);
   
@@ -290,11 +288,6 @@ useEffect(() => {
         setGaleStatus('available');
       }, 10000);
       
-      // Remove this line - it's causing duplication
-      // await chatApi.saveMessages([...messages, ...userMessages, ...galeMessages]);
-      
-      // Instead, rely on the useEffect that watches messages changes
-      // This will automatically save the current state of messages
       
     } catch (error) {
       console.error('Error sending message:', error);
@@ -458,11 +451,6 @@ useEffect(() => {
     if (typingTimeout) {
       clearTimeout(typingTimeout);
     }
-    
-    // Set new timeout to detect when user stops typing
-    setTypingTimeout(setTimeout(() => {
-      // User stopped typing
-    }, 1000));
   }}
   placeholder="Type Message"
   placeholderTextColor="#ccc"

@@ -1,6 +1,11 @@
 interface Message {
-  date: string; // or Date if you're working with Date objects
-  // other message properties...
+  id: string;
+  text: string;
+  time: string;
+  from: 'user' | 'gale';
+  date: string;
+  isContinuation: number;
+  status?: 'sending' | 'sent' | 'seen' | 'error';
 }
 
 interface GroupedMessage {

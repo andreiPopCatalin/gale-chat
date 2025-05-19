@@ -16,8 +16,7 @@
   - Animated transitions
   - Sound effects (3 categories: UI, transitions, messages)
 - **Gale Status System**:
-  - Available → Online → Typing → Responding cycle
-  - 10-15 second timeout before returning to "Available"
+  - Available → Online → Typing → Responding cycle → 10-15 second timeout before returning to "Available"
 
 ## Installation
 
